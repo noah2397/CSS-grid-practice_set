@@ -1,0 +1,142 @@
+@import "reset";
+@import "_variables";
+@import "_function";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  height: 100vh;
+  background: $bg;
+  gap: 1px;
+  display: grid;
+  grid-template-columns: 1.5fr 1.9fr 1.5fr;
+  grid-template-rows: 1fr 5fr 1fr;
+  & > * {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $bg;
+    font-size: 22px;
+    text-transform: uppercase;
+  }
+  .menu {
+    grid-column-start: -2;
+  }
+  .title-image {
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .center-image {
+    grid-column: 2/-2;
+    grid-row: 2/-2;
+    background-image: url("https://images.unsplash.com/photo-1517607648415-b431854daa86?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGxvdmV8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60");
+    background-size: cover;
+    background-position: center;
+  }
+  .number__row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1px;
+    height: 100%;
+    align-items: stretch;
+    .number {
+      visibility: hidden;
+      border: 1px solid $bg;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: all 0.4s linear;
+      // transition: color 0.3s linear, background-color 0.3s linear;
+      &:hover {
+        background-color: $bg;
+        color: white;
+      }
+    }
+    .num10 {
+      animation: initiate 0.5s $animation forwards;
+      animation-delay: 0.1s;
+    }
+    .num9 {
+      animation: initiate 0.5s $animation forwards;
+      animation-delay: 0.2s;
+    }
+    .num8 {
+      animation: initiate 0.5s $animation forwards;
+      animation-delay: 0.3s;
+    }
+    .num7 {
+      animation: initiate 0.5s $animation forwards;
+      animation-delay: 0.4s;
+    }
+    .num6 {
+      animation: initiate 0.5s $animation forwards;
+      animation-delay: 0.5s;
+    }
+    .num5 {
+      animation: initiate2 0.5s $animation forwards;
+      animation-delay: 0.1s;
+    }
+    .num4 {
+      animation: initiate2 0.5s $animation forwards;
+      animation-delay: 0.2s;
+    }
+    .num3 {
+      animation: initiate2 0.5s $animation forwards;
+      animation-delay: 0.3s;
+    }
+    .num2 {
+      animation: initiate2 0.5s $animation forwards;
+      animation-delay: 0.4s;
+    }
+    .num1 {
+      animation: initiate2 0.5s $animation forwards;
+      animation-delay: 0.5s;
+    }
+  }
+  .scrolling__text {
+    grid-column: 2/3;
+    grid-row: 3/-1;
+    white-space: nowrap;
+    overflow: hidden;
+    span {
+      animation: scrollText 10s linear infinite forwards;
+    }
+  }
+}
+
+@keyframes scrollText {
+  from {
+    transform: translateX(900px);
+  }
+  to {
+    transform: translateX(-900px);
+  }
+}
+@keyframes initiate {
+  from {
+    visibility: visible;
+    transform: translateX(-100px);
+  }
+  to {
+    visibility: visible;
+    transform: translateX(0px);
+  }
+}
+@keyframes initiate2 {
+  from {
+    visibility: visible;
+    transform: translateX(100px);
+  }
+  to {
+    visibility: visible;
+    transform: translateX(0px);
+  }
+}

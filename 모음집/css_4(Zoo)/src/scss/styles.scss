@@ -1,0 +1,61 @@
+@import "reset";
+@import "_variables";
+@import "_function";
+
+* {
+  box-sizing: border-box;
+}
+
+.header--grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 50px;
+
+  div {
+    display: flex;
+    align-items: center;
+    &:hover {
+      background: $bg;
+      .header--menu {
+        color: white;
+      }
+    }
+    span {
+      font-size: 23pt;
+      font-weight: 400;
+      margin: 0 25px;
+    }
+    .header--name {
+      margin-right: 90px;
+    }
+    .header--lang {
+      margin-left: 250px;
+      font-size: 10pt;
+    }
+    .header--menu {
+      color: $bg;
+    }
+  }
+}
+
+main {
+  display: grid;
+  grid-template-rows: repeat(8, 44vh);
+  gap: 1px;
+
+  .grider {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 40vh auto;
+    gap: 1px;
+    img {
+      height: 100%;
+      width: 100%;
+    }
+    div {
+      display: flex;
+      align-items: center;
+      margin-left: 15px;
+    }
+  }
+}
