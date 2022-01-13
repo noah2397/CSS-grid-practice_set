@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+  background-color: bisque;
+}
+body {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 2px;
+}
+img {
+  height: 100px;
+  width: 100px;
+  border-radius: 40px;
+  margin: 50px 0;
+}
+div {
+  display: grid;
+  grid-template-rows: 0.8fr 0.2fr;
+  justify-items: center;
+  align-items: center;
+}
+a {
+  text-decoration: none;
+  font-size: 30pt;
+}
